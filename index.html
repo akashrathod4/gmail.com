@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contact form to gmail Using Jvascript</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false">
+            <h3 class="akash">GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="email id" required>
+            <input type="text" id="phone" placeholder="Enter Phone number" required>
+            <textarea  id="message" rows="5" placeholder="How can Help you?"></textarea>
+            <button type="submit">Send</button>
+
+        </form>
+
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <!-- <script src="index.js"></script> -->
+    <SCRipt>
+        function sendEmail(){
+    Email.send({
+        Host : "smtp.elasticemail.com",
+        Username : "akash3399rathod@gmail.com",
+        Password : "C74BB27606AC059D5652A2A50E2242E7B423",
+        To : 'akashrathod230496@gmail.com',
+        From : document.getElementById("email").value,
+        Subject : "New contact form enquiry",
+        Body : "And this is the body"
+    }).then(
+      message => alert(message)
+    );
+}
+    </SCRipt>
+</body>
+</html>
